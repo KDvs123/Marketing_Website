@@ -42,6 +42,7 @@ const modelPaths = [
   "./assets/intro/scene.gltf",
   "./assets/charbot/scene.gltf",
   "./assets/asian_tea_house_-_laforce_bisong/scene.gltf",
+  "./assets/mobile_phone/scene.gltf",
 ];
 
 modelPaths.forEach((path, index) => {
@@ -67,7 +68,7 @@ modelPaths.forEach((path, index) => {
       // Specific adjustments for the tea_info model
       model.position.set(1, -0.5, 0); // Adjusted position for better visibility
       model.scale.set(0.1, 0.1, 0.1); // Smaller scale for tea_info
-    } else {
+    }else {
       // Default settings for other models
       model.position.set(index === 1 || index === 3 ? 2 : -2, 1, 1);
       model.scale.set(0.01, 0.01, 0.01); // Standard initial scale for other models

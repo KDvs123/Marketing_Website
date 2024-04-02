@@ -243,3 +243,31 @@ p {
 .navbar{
   padding:10px 60px;
 }
+
+/* Ensure that the section has a specific ID or class for unique targeting */
+.three {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  height: 100vh;
+  text-align: center;
+  overflow: hidden; /* Use 'hidden' to prevent scroll bars, but be cautious of content cut-off */
+}
+
+/* Adjust the heading styles */
+.three h1 {
+  font-size: 4.5vw; /* Use viewport width for responsive sizing */
+  margin: 0;
+  padding: 8vh 0; /* Add top and bottom padding */
+  /* Remove absolute positioning or any transforms that could affect the layout */
+  z-index: 2; /* Ensure the heading is layered above the paragraph */
+}
+
+/* Style the paragraph text */
+.three p {
+  font-size: 16px; /* Use viewport width for responsive sizing */
+  max-width: 80%; /* Set a max-width for line length control */
+  margin-top: 30vh; /* Adjust the negative margin to pull text up towards the heading */
+  z-index: 1; /* Ensure the paragraph is below the heading if overlapping occurs */
+}

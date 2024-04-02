@@ -40,7 +40,20 @@ body{
     0 -15px 35px rgba(0, 0, 0, 0.1),
     0 15px 35px rgba(0, 0, 0, 0.1);
     transition: .5s;
+    overflow: hidden; 
+    
 }
+
+.shoe3D {
+  position: absolute; /* Positions the image absolutely within its relative parent */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the image covers the full width */
+  height: 100%; /* Ensures the image covers the full height */
+  object-fit: cover; /* Ensures the image covers the space without distorting aspect ratio */
+  z-index: -1; /* Sends the image to the back, so text and other elements appear on top */
+}
+
 
 .gradients{
     position: absolute;
@@ -75,6 +88,38 @@ body{
 
 .second{
     z-index: -1;
+}
+
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+.shoeBackground {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  width: 50%; /* Adjust based on your design */
+}
+
+.info {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  width: 50%; /* Adjust based on your design */
 }
 
 
