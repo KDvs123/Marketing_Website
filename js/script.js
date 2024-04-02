@@ -40,8 +40,8 @@ const textureLoader = new THREE.TextureLoader();
 const modelPaths = [
   "./assets/old_tree/scene.gltf",
   "./assets/intro/scene.gltf",
-  "./assets/donut/scene.gltf",
-  "./assets/teainfo/scene.gltf",
+  "./assets/charbot/scene.gltf",
+  "./assets/asian_tea_house_-_laforce_bisong/scene.gltf",
 ];
 
 modelPaths.forEach((path, index) => {
@@ -61,12 +61,12 @@ modelPaths.forEach((path, index) => {
     } else if (index === 2) {
       // Assuming the donut is the third model
       // Adjustments for the donut model to ensure visibility
-      model.position.set(0, 0, 0); // Adjusted position
-      model.scale.set(1, 1, 1); // Increase scale for visibility
+      model.position.set(-4, 0.3, 0); // Adjusted position
+      model.scale.set(0.06, 0.06, 0.06); // Increase scale for visibility
     } else if (index === 3) {
       // Specific adjustments for the tea_info model
-      model.position.set(1, -1, 0); // Adjusted position for better visibility
-      model.scale.set(0.01, 0.01, 0.01); // Smaller scale for tea_info
+      model.position.set(1, -0.5, 0); // Adjusted position for better visibility
+      model.scale.set(0.1, 0.1, 0.1); // Smaller scale for tea_info
     } else {
       // Default settings for other models
       model.position.set(index === 1 || index === 3 ? 2 : -2, 1, 1);
@@ -109,7 +109,6 @@ const overlayMaterial = new THREE.ShaderMaterial({
 });
 const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
 scene.add(overlay);
-
 
 /**
  * Lighting
@@ -154,39 +153,43 @@ window.addEventListener("scroll", () => {
   const newSection = Math.floor(scrollPosition / sectionHeight);
 
   if (newSection !== currentSection) {
-    // Previous (old) model moves out of the screen with extended movement
+    // If we're leaving the previous section, animate the old model out
     if (models[currentSection]) {
       const oldModel = models[currentSection];
       gsap.to(oldModel.position, {
-        x: currentSection < newSection ? -10 : 10, // Increase distance for the exit animation
+        x: currentSection < newSection ? -10 : 10,
         duration: 1.5,
         ease: "power2.in",
         onComplete: () => {
-          oldModel.visible = false; // Hide the model completely after animation
+          oldModel.visible = false;
         },
       });
     }
 
-    // New model moves into the screen with extended movement
+    // If we're entering a new section, animate the new model in
     if (models[newSection]) {
       const newModel = models[newSection];
-      newModel.visible = true; // Ensure the new model is visible before starting the animation
+      newModel.visible = true;
+
+      // Default entrance animation for new model
+      let entranceX = 1;
+
+      // If the new section is the chatbot's section, we want to move it a little to the left
+      if (newSection === 2) {
+        // Adjust this index if your chatbot is not the third model
+        entranceX = -1.5; // Adjust this value to set how far left the chatbot should move
+      }
+
       gsap.fromTo(
         newModel.position,
-        { x: newSection > currentSection ? 10 : -10 }, // Increase start position for entrance
-        {
-          x: 1, // Move to the center of the screen
-          duration: 1.5,
-          ease: "power2.out",
-        }
+        { x: newSection > currentSection ? 10 : -10 },
+        { x: entranceX, duration: 1.5, ease: "power2.out" }
       );
     }
 
     currentSection = newSection;
   }
 });
-
-
 
 /**
  * Animation Loop
@@ -215,3 +218,18 @@ window.addEventListener("scroll", function () {
 });
 
 
+document.addEventListener("scroll", function () {
+  var footer = document.getElementById("site-footer");
+  var leftHalf = document.getElementById("left-half");
+  var rightHalf = document.getElementById("right-half");
+
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    // User is at the bottom of the page
+    leftHalf.style.left = "0"; // Move the left half into view
+    rightHalf.style.right = "0"; // Move the right half into view
+  } else {
+    // User is not at the bottom; reset if needed
+    leftHalf.style.left = "-50%";
+    rightHalf.style.right = "-50%";
+  }
+});
