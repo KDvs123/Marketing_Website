@@ -42,7 +42,7 @@ const modelPaths = [
   "./assets/intro/scene.gltf",
   "./assets/charbot/scene.gltf",
   "./assets/asian_tea_house_-_laforce_bisong/scene.gltf",
-  "./assets/mobile_phone/scene.gltf",
+ 
 ];
 
 modelPaths.forEach((path, index) => {
@@ -58,7 +58,7 @@ modelPaths.forEach((path, index) => {
       model.scale.set(0.4, 0.4, 0.4); // Modified scale for visibility
     } else if (index == 1) {
       model.scale.set(0.18, 0.18, 0.18); // Increase scale for visibility
-      model.position.set(1, -1.5, 0); // Adjust position to be on screen
+      model.position.set(1.3, -1.7, 0); // Adjust position to be on screen
     } else if (index === 2) {
       // Assuming the donut is the third model
       // Adjustments for the donut model to ensure visibility

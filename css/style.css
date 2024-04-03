@@ -20,7 +20,6 @@ body {
 }
 
 
-
 body.loaded {
   overflow: auto;
 }
@@ -83,6 +82,7 @@ nav .middle {
   top: 0;
   left: 0;
   outline: none;
+ 
 }
 
 section {
@@ -241,7 +241,7 @@ p {
 }
 
 .navbar{
-  padding:10px 60px;
+  padding:5px 60px;
 }
 
 /* Ensure that the section has a specific ID or class for unique targeting */
