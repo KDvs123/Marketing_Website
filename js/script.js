@@ -39,10 +39,10 @@ const textureLoader = new THREE.TextureLoader();
 // Model paths
 const modelPaths = [
   "./assets/old_tree/scene.gltf",
-  "./assets/intro/scene.gltf",
+  "./assets/teahouse_xyz_homework_part_2/scene.gltf",
   "./assets/charbot/scene.gltf",
-  "./assets/asian_tea_house_-_laforce_bisong/scene.gltf",
- 
+  "./assets/the_wooden_glass_tea_house/scene.gltf"
+  
 ];
 
 modelPaths.forEach((path, index) => {
@@ -57,8 +57,8 @@ modelPaths.forEach((path, index) => {
       model.position.set(1, -1, 0);
       model.scale.set(0.4, 0.4, 0.4); // Modified scale for visibility
     } else if (index == 1) {
-      model.scale.set(0.18, 0.18, 0.18); // Increase scale for visibility
-      model.position.set(1.3, -1.7, 0); // Adjust position to be on screen
+      model.scale.set(0.5, 0.5, 0.5); // Increase scale for visibility
+      model.position.set(2, -2.7, 0); // Adjust position to be on screen
     } else if (index === 2) {
       // Assuming the donut is the third model
       // Adjustments for the donut model to ensure visibility
@@ -67,11 +67,11 @@ modelPaths.forEach((path, index) => {
     } else if (index === 3) {
       // Specific adjustments for the tea_info model
       model.position.set(1, -0.5, 0); // Adjusted position for better visibility
-      model.scale.set(0.1, 0.1, 0.1); // Smaller scale for tea_info
+      model.scale.set(0.3, 0.3, 0.3); // Smaller scale for tea_info
     }else {
       // Default settings for other models
       model.position.set(index === 1 || index === 3 ? 2 : -2, 1, 1);
-      model.scale.set(0.01, 0.01, 0.01); // Standard initial scale for other models
+      model.scale.set(1, 1, 1); // Standard initial scale for other models
     }
 
     models[index] = model;
