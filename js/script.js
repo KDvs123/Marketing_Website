@@ -1,6 +1,3 @@
-/**
- * Base
- */
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
@@ -39,11 +36,12 @@ const textureLoader = new THREE.TextureLoader();
 // Model paths
 const modelPaths = [
   "./assets/old_tree/scene.gltf",
-  "./assets/teahouse_xyz_homework_part_2/scene.gltf",
+  "./assets/retro_tea_boxes_free_3d_model/scene.gltf",
   "./assets/charbot/scene.gltf",
-  "./assets/the_wooden_glass_tea_house/scene.gltf"
-  
+  "./assets/the_wooden_glass_tea_house/scene.gltf",
 ];
+
+
 
 modelPaths.forEach((path, index) => {
   gltfLoader.load(path, (gltf) => {
@@ -57,8 +55,8 @@ modelPaths.forEach((path, index) => {
       model.position.set(1, -1, 0);
       model.scale.set(0.4, 0.4, 0.4); // Modified scale for visibility
     } else if (index == 1) {
-      model.scale.set(0.5, 0.5, 0.5); // Increase scale for visibility
-      model.position.set(2, -2.7, 0); // Adjust position to be on screen
+      model.scale.set(2, 2, 2); // Increase scale for visibility
+      model.position.set(2, 0.2, 2); // Adjust position to be on screen
     } else if (index === 2) {
       // Assuming the donut is the third model
       // Adjustments for the donut model to ensure visibility
