@@ -212,9 +212,9 @@ export const pricing = [
     description: "Enhance tea cultivation with disease detection, tea profiles, and real-time weather and market updates.",
     price: "0",
     features: [
-      "Disease Detection and Treatment Plans.",
-      "Tea Profile which includes Tea Varients.",
-      "Weather and Current Market Price.",
+      "Comprehensive disease detection and treatment options are available for tea plants, ensuring efficient health care with tailored plans.",
+      "Diverse tea variants await exploration to satisfy varied taste preferences.",
+      "Stay updated on weather conditions and market prices to inform tea purchases.",
     ],
   },
   {
@@ -223,10 +223,10 @@ export const pricing = [
     description: "Streamline tea farming with disease insights, tea variant profiles, market trends, and chatbot support.",
     price: "5",
     features: [
-      "Disease Detection and Treatment Plans.",
-      "Tea Profile which includes Tea Varients.",
-      "Weather and Current Market Price.",
-      "Chatbot Assistance",
+     "Comprehensive disease detection and treatment options are available for tea plants, ensuring efficient health care with tailored plans.",
+      "Diverse tea variants await exploration to satisfy varied taste preferences.",
+      "Stay updated on weather conditions and market prices to inform tea purchases.",
+      " Personalized chatbot assistance offers tailored guidance and solutions for enhanced experiences.",
     ],
   },
   {
@@ -235,10 +235,10 @@ export const pricing = [
     description: "Boost tea farming with disease solutions, tea profiles, market data, chatbot help, and a 20-day free trial.",
     price: null,
     features: [
-      "Disease Detection and Treatment Plans.",
-      "Tea Profile which includes Tea Varients.",
-      "Weather and Current Market Price.",
-      "Chatbot Assistance",
+      "Comprehensive disease detection and treatment options are available for tea plants, ensuring efficient health care with tailored plans.",
+      "Diverse tea variants await exploration to satisfy varied taste preferences.",
+      "Stay updated on weather conditions and market prices to inform tea purchases.",
+      " Personalized chatbot assistance offers tailored guidance and solutions for enhanced experiences.",
       "20 days free trial",
     ],
   },
@@ -289,8 +289,8 @@ export const benefits = [
   },
   {
     id: "5",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Multi Language Support",
+    text: "The app utilizes natural language processing to understand user queries and offer accurate responses in multiple languages, enhancing the tea care experience..",
     backgroundUrl: "./src/assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
