@@ -71,10 +71,10 @@ const Header = () => {
           href="#signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
-          New account
+          Welcome to TeaHub
         </a>
         <Button className="hidden lg:flex" href="#login">
-          Sign in
+          Get The App
         </Button>
 
         <Button
